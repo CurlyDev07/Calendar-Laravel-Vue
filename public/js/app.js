@@ -10515,7 +10515,7 @@ var main = Object(_fullcalendar_core__WEBPACK_IMPORTED_MODULE_0__["createPlugin"
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* WEBPACK VAR INJECTION */(function(global) {/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "install", function() { return install; });
-/* harmony import */ var fast_deep_equal__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! fast-deep-equal */ "./node_modules/@fullcalendar/vue/node_modules/fast-deep-equal/index.js");
+/* harmony import */ var fast_deep_equal__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! fast-deep-equal */ "./node_modules/fast-deep-equal/index.js");
 /* harmony import */ var fast_deep_equal__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(fast_deep_equal__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _fullcalendar_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @fullcalendar/core */ "./node_modules/@fullcalendar/core/main.esm.js");
 /*
@@ -10939,73 +10939,6 @@ if (GlobalVue) {
 
 
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../../webpack/buildin/global.js */ "./node_modules/webpack/buildin/global.js")))
-
-/***/ }),
-
-/***/ "./node_modules/@fullcalendar/vue/node_modules/fast-deep-equal/index.js":
-/*!******************************************************************************!*\
-  !*** ./node_modules/@fullcalendar/vue/node_modules/fast-deep-equal/index.js ***!
-  \******************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-var isArray = Array.isArray;
-var keyList = Object.keys;
-var hasProp = Object.prototype.hasOwnProperty;
-
-module.exports = function equal(a, b) {
-  if (a === b) return true;
-
-  if (a && b && typeof a == 'object' && typeof b == 'object') {
-    var arrA = isArray(a)
-      , arrB = isArray(b)
-      , i
-      , length
-      , key;
-
-    if (arrA && arrB) {
-      length = a.length;
-      if (length != b.length) return false;
-      for (i = length; i-- !== 0;)
-        if (!equal(a[i], b[i])) return false;
-      return true;
-    }
-
-    if (arrA != arrB) return false;
-
-    var dateA = a instanceof Date
-      , dateB = b instanceof Date;
-    if (dateA != dateB) return false;
-    if (dateA && dateB) return a.getTime() == b.getTime();
-
-    var regexpA = a instanceof RegExp
-      , regexpB = b instanceof RegExp;
-    if (regexpA != regexpB) return false;
-    if (regexpA && regexpB) return a.toString() == b.toString();
-
-    var keys = keyList(a);
-    length = keys.length;
-
-    if (length !== keyList(b).length)
-      return false;
-
-    for (i = length; i-- !== 0;)
-      if (!hasProp.call(b, keys[i])) return false;
-
-    for (i = length; i-- !== 0;) {
-      key = keys[i];
-      if (!equal(a[key], b[key])) return false;
-    }
-
-    return true;
-  }
-
-  return a!==a && b!==b;
-};
-
 
 /***/ }),
 
@@ -13013,6 +12946,43 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports) {
 
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -17729,6 +17699,73 @@ function toComment(sourceMap) {
 
 	return '/*# ' + data + ' */';
 }
+
+
+/***/ }),
+
+/***/ "./node_modules/fast-deep-equal/index.js":
+/*!***********************************************!*\
+  !*** ./node_modules/fast-deep-equal/index.js ***!
+  \***********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var isArray = Array.isArray;
+var keyList = Object.keys;
+var hasProp = Object.prototype.hasOwnProperty;
+
+module.exports = function equal(a, b) {
+  if (a === b) return true;
+
+  if (a && b && typeof a == 'object' && typeof b == 'object') {
+    var arrA = isArray(a)
+      , arrB = isArray(b)
+      , i
+      , length
+      , key;
+
+    if (arrA && arrB) {
+      length = a.length;
+      if (length != b.length) return false;
+      for (i = length; i-- !== 0;)
+        if (!equal(a[i], b[i])) return false;
+      return true;
+    }
+
+    if (arrA != arrB) return false;
+
+    var dateA = a instanceof Date
+      , dateB = b instanceof Date;
+    if (dateA != dateB) return false;
+    if (dateA && dateB) return a.getTime() == b.getTime();
+
+    var regexpA = a instanceof RegExp
+      , regexpB = b instanceof RegExp;
+    if (regexpA != regexpB) return false;
+    if (regexpA && regexpB) return a.toString() == b.toString();
+
+    var keys = keyList(a);
+    length = keys.length;
+
+    if (length !== keyList(b).length)
+      return false;
+
+    for (i = length; i-- !== 0;)
+      if (!hasProp.call(b, keys[i])) return false;
+
+    for (i = length; i-- !== 0;) {
+      key = keys[i];
+      if (!equal(a[key], b[key])) return false;
+    }
+
+    return true;
+  }
+
+  return a!==a && b!==b;
+};
 
 
 /***/ }),
@@ -49981,29 +50018,230 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
-}
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "div",
-      { staticClass: "border bg-white flex items-center px-5 shadow-sm py-2" },
-      [
-        _c("img", {
+  return _c(
+    "div",
+    { staticClass: "border bg-white flex items-center px-5 shadow-sm py-2" },
+    [
+      _c(
+        "svg",
+        {
           staticClass: "h-10 py-1",
-          attrs: { src: "/icons/calendar.svg" }
-        }),
-        _vm._v(" "),
-        _c("span", { staticClass: "font-medium ml-3 text-2xl" }, [
-          _vm._v("Calendar")
-        ])
-      ]
-    )
-  }
-]
+          staticStyle: { "enable-background": "new 0 0 512 512" },
+          attrs: {
+            version: "1.1",
+            id: "Layer_1",
+            xmlns: "http://www.w3.org/2000/svg",
+            "xmlns:xlink": "http://www.w3.org/1999/xlink",
+            x: "0px",
+            y: "0px",
+            viewBox: "0 0 512 512",
+            "xml:space": "preserve"
+          }
+        },
+        [
+          _c("path", {
+            staticStyle: { fill: "#FF7058" },
+            attrs: {
+              d:
+                "M490.667,512H21.333C9.6,512,0,502.4,0,490.667V73.6c0-11.733,9.6-21.333,21.333-21.333h469.333\n            C502.4,52.267,512,61.867,512,73.6v417.067C512,502.4,502.4,512,490.667,512z"
+            }
+          }),
+          _vm._v(" "),
+          _c("path", {
+            staticStyle: { fill: "#F2F2F2" },
+            attrs: {
+              d:
+                "M474.667,173.867H37.333c-6.4,0-10.667,4.267-10.667,10.667v290.133\n            c0,6.4,4.267,10.667,10.667,10.667H400L485.333,400V184.533C485.333,179.2,481.067,173.867,474.667,173.867z"
+            }
+          }),
+          _vm._v(" "),
+          _c("path", {
+            staticStyle: { fill: "#CDD6E0" },
+            attrs: {
+              d:
+                "M400,485.333L485.333,400H409.6c-5.333,0-9.6,4.267-9.6,9.6V485.333z"
+            }
+          }),
+          _vm._v(" "),
+          _c("g", [
+            _c("circle", {
+              staticStyle: { fill: "#FFFFFF" },
+              attrs: { cx: "85.333", cy: "92.8", r: "22.4" }
+            }),
+            _vm._v(" "),
+            _c("circle", {
+              staticStyle: { fill: "#FFFFFF" },
+              attrs: { cx: "199.467", cy: "92.8", r: "22.4" }
+            }),
+            _vm._v(" "),
+            _c("circle", {
+              staticStyle: { fill: "#FFFFFF" },
+              attrs: { cx: "312.533", cy: "92.8", r: "22.4" }
+            }),
+            _vm._v(" "),
+            _c("circle", {
+              staticStyle: { fill: "#FFFFFF" },
+              attrs: { cx: "426.667", cy: "92.8", r: "22.4" }
+            })
+          ]),
+          _vm._v(" "),
+          _c("g", [
+            _c("path", {
+              staticStyle: { fill: "#40596B" },
+              attrs: {
+                d:
+                  "M85.333,104.533L85.333,104.533c-7.467,0-13.867-6.4-13.867-13.867v-76.8C70.4,6.4,76.8,0,85.333,0\n            l0,0C92.8,0,99.2,6.4,99.2,13.867V89.6C99.2,98.133,92.8,104.533,85.333,104.533z"
+              }
+            }),
+            _vm._v(" "),
+            _c("path", {
+              staticStyle: { fill: "#40596B" },
+              attrs: {
+                d:
+                  "M199.467,104.533L199.467,104.533c-7.467,0-13.867-6.4-13.867-13.867v-76.8\n            C185.6,6.4,192,0,199.467,0l0,0c7.467,0,13.867,6.4,13.867,13.867V89.6C213.333,98.133,206.933,104.533,199.467,104.533z"
+              }
+            }),
+            _vm._v(" "),
+            _c("path", {
+              staticStyle: { fill: "#40596B" },
+              attrs: {
+                d:
+                  "M312.533,104.533L312.533,104.533c-7.467,0-13.867-6.4-13.867-13.867v-76.8\n            C298.667,6.4,305.067,0,312.533,0l0,0C320,0,326.4,6.4,326.4,13.867V89.6C327.467,98.133,321.067,104.533,312.533,104.533z"
+              }
+            }),
+            _vm._v(" "),
+            _c("path", {
+              staticStyle: { fill: "#40596B" },
+              attrs: {
+                d:
+                  "M426.667,104.533L426.667,104.533c-7.467,0-13.867-6.4-13.867-13.867v-76.8\n            C412.8,6.4,419.2,0,426.667,0l0,0c7.467,0,13.867,6.4,13.867,13.867V89.6C441.6,98.133,435.2,104.533,426.667,104.533z"
+              }
+            })
+          ]),
+          _vm._v(" "),
+          _c("g", [
+            _c("rect", {
+              staticStyle: { fill: "#CDD6E0" },
+              attrs: {
+                x: "167.467",
+                y: "205.867",
+                width: "67.2",
+                height: "60.8"
+              }
+            }),
+            _vm._v(" "),
+            _c("rect", {
+              staticStyle: { fill: "#CDD6E0" },
+              attrs: {
+                x: "277.333",
+                y: "205.867",
+                width: "67.2",
+                height: "60.8"
+              }
+            }),
+            _vm._v(" "),
+            _c("rect", {
+              staticStyle: { fill: "#CDD6E0" },
+              attrs: {
+                x: "386.133",
+                y: "205.867",
+                width: "67.2",
+                height: "60.8"
+              }
+            }),
+            _vm._v(" "),
+            _c("rect", {
+              staticStyle: { fill: "#CDD6E0" },
+              attrs: {
+                x: "58.667",
+                y: "299.733",
+                width: "67.2",
+                height: "60.8"
+              }
+            })
+          ]),
+          _vm._v(" "),
+          _c("rect", {
+            staticStyle: { fill: "#FFD15C" },
+            attrs: { x: "167.467", y: "299.733", width: "67.2", height: "60.8" }
+          }),
+          _vm._v(" "),
+          _c("g", [
+            _c("rect", {
+              staticStyle: { fill: "#CDD6E0" },
+              attrs: {
+                x: "277.333",
+                y: "299.733",
+                width: "67.2",
+                height: "60.8"
+              }
+            }),
+            _vm._v(" "),
+            _c("rect", {
+              staticStyle: { fill: "#CDD6E0" },
+              attrs: {
+                x: "386.133",
+                y: "299.733",
+                width: "67.2",
+                height: "60.8"
+              }
+            }),
+            _vm._v(" "),
+            _c("rect", {
+              staticStyle: { fill: "#CDD6E0" },
+              attrs: {
+                x: "58.667",
+                y: "392.533",
+                width: "67.2",
+                height: "60.8"
+              }
+            }),
+            _vm._v(" "),
+            _c("rect", {
+              staticStyle: { fill: "#CDD6E0" },
+              attrs: {
+                x: "167.467",
+                y: "392.533",
+                width: "67.2",
+                height: "60.8"
+              }
+            }),
+            _vm._v(" "),
+            _c("rect", {
+              staticStyle: { fill: "#CDD6E0" },
+              attrs: {
+                x: "277.333",
+                y: "392.533",
+                width: "67.2",
+                height: "60.8"
+              }
+            })
+          ]),
+          _c("g"),
+          _c("g"),
+          _c("g"),
+          _c("g"),
+          _c("g"),
+          _c("g"),
+          _c("g"),
+          _c("g"),
+          _c("g"),
+          _c("g"),
+          _c("g"),
+          _c("g"),
+          _c("g"),
+          _c("g"),
+          _c("g")
+        ]
+      ),
+      _vm._v(" "),
+      _c("span", { staticClass: "font-medium ml-3 text-2xl" }, [
+        _vm._v("Calendar")
+      ])
+    ]
+  )
+}
+var staticRenderFns = []
 render._withStripped = true
 
 
@@ -68137,8 +68375,8 @@ var routes = [{
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\Users\bigbenta\Desktop\Projects\Calendar-Event-Using-VueJs-and-Laravel\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\Users\bigbenta\Desktop\Projects\Calendar-Event-Using-VueJs-and-Laravel\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! /var/www/html/Calendar-Laravel-Vue/resources/js/app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! /var/www/html/Calendar-Laravel-Vue/resources/sass/app.scss */"./resources/sass/app.scss");
 
 
 /***/ })
