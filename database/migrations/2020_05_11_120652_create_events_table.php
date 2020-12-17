@@ -10,7 +10,7 @@ class CreateEventsTable extends Migration
     {
         Schema::create('events', function (Blueprint $table) {
             $table->id();
-            $table->string('title')->dafault('Un named event');
+            $table->string('title')->dafault('Christmas Party');
             $table->date('date')->dafault(now());
             $table->timestamps();
         });
